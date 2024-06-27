@@ -1,0 +1,6 @@
+@FameDirectAPI_HostAddress = http://localhost:5104
+
+GET {{FameDirectAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

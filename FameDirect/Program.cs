@@ -19,12 +19,18 @@ namespace FameDirect
             Console.WriteLine("Enter UserName: ");
             string userName = Console.ReadLine();
 
-            Verify verify = new Verify();
-            bool result = verify.verifyUser(userName);
+            Console.Write("Enter Password: ");
+            string password = Console.ReadLine();
+
+            DirectorGetServices verify = new DirectorGetServices();
+            bool result = verify.verifyUser(userName, password);
+
+
+
 
             if (result)
             {
-                DirecList directList = new DirecList();
+                DirectorData directList = new DirectorData();
 
                 Console.WriteLine("                                            Welcome User!");
                 Console.WriteLine("                   --------------------------------------------------------------------------");
