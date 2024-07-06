@@ -7,7 +7,7 @@ namespace DL
     public class SQLDbData
     {
         string connectionString
-            = "Data Source = LAPTOP-GSQAHJBR\\SQLEXPRESS; Initial Catalog = FameDirect; Integrated Security = true;";
+            = "Data Source = LAPTOP-GSQAHJBR; Initial Catalog = FameDirect; Integrated Security = true;";
 
             SqlConnection sqlConnection;
 
@@ -18,7 +18,7 @@ namespace DL
 
         public List<Directors> GetDirectors()
         {
-            string selectStatement = "SELECT Director, Movie, FROM FameDirect";
+            string selectStatement = "SELECT Director, Movie FROM FameDirect";
 
             SqlCommand selectCommand = new SqlCommand(selectStatement, sqlConnection);
 
@@ -26,6 +26,7 @@ namespace DL
             List<Directors> director = new List<Directors>();
 
             SqlDataReader reader = selectCommand.ExecuteReader();
+
 
             while (reader.Read())
             {
@@ -70,12 +71,12 @@ namespace DL
         {
             int success;
 
-            string updateStatement = $"UPDATE FameDirect SET @Movie = WHERE Director = @Director";
+            string updateStatement = $"UPDATE FameDirect SET Movie = @Movie WHERE Director = @Director";
             SqlCommand updateCommand = new SqlCommand(updateStatement, sqlConnection);
             sqlConnection.Open();
 
-            updateCommand.Parameters.AddWithValue("@Director", Director );
-            updateCommand.Parameters.AddWithValue("Movie", Movie);
+            updateCommand.Parameters.AddWithValue("@Movie", Movie);
+            updateCommand.Parameters.AddWithValue("@Director", Director);
 
             success = updateCommand.ExecuteNonQuery();
 

@@ -16,6 +16,7 @@ namespace Client
             {
                 Console.WriteLine(item.Director);
                 Console.WriteLine(item.Movie);
+                Console.WriteLine();
             }
         }
     }
