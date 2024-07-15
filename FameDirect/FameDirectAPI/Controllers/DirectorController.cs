@@ -1,4 +1,5 @@
 using BLogic;
+using TheModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 
@@ -47,6 +48,21 @@ namespace FameDirectAPI
             var result = _direcCUD.UpdateDirectors(request.Director, request.Movie);
 
             return new JsonResult (result);
+        }
+
+        [HttpDelete]
+        public JsonResult DeleteSong(FameDirectAPI.Directors request)
+        {
+
+            var delete = new TheModel.Directors
+            {
+                Director = request.Director
+
+            };
+
+            var result = _direcCUD.DeleteDirectors(delete);
+
+            return new JsonResult(result);
         }
     }
 }
