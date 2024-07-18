@@ -7,7 +7,7 @@ namespace DL
     public class SQLDbData
     {
         string connectionString
-            = "Server = tcp:20.2.38.141,1433; Database = FameDirect; User Id = sa; Password = integ2!";
+            = "Server = tcp:172.187.130.149,1433; Database = FameDirect; User Id = sa; Password = integ2!";
         // = "Data Source = LAPTOP-GSQAHJBR; Initial Catalog = FameDirect; Integrated Security = true;";
 
         SqlConnection sqlConnection;
